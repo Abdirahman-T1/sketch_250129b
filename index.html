@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>My Game</title>
+  <title>Pong Battles</title>
 
   <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
   <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
   <script language="javascript" type="text/javascript" src="sketch_250129b.js"></script>
   <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
 
-<style>
+   <style>
     /* Apply a half-blue and half-red background */
     body {
       margin: 0;
@@ -21,7 +21,8 @@
       align-items: center;
       background: linear-gradient(to right, blue 50%, red 50%);
       font-family: Arial, sans-serif;
-      flex-direction: column;  /* Stack children (header + game canvas) vertically */
+      position: relative; /* Allow positioning images around the game */
+      overflow: hidden; /* Hide any overflow caused by images */
     }
 
     /* Header style */
@@ -29,7 +30,11 @@
       color: white;
       font-size: 3em;
       margin: 0;
-      padding-top: 20px; /* Space between the top of the screen and the header */
+      padding-top: 10px; /* Space between the top of the screen and the header */
+      position: absolute;
+      top: -10px; /* Moved further up */
+      left: 51%;
+      transform: translateX(-50%); /* Center the header horizontally */
     }
 
     /* Center the game container */
@@ -37,9 +42,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      flex: 1; /* This ensures the game canvas takes the remaining space */
-      width: 100%;
-      position: relative;
+      position: relative; /* This allows us to position images around it */
     }
 
     /* p5 canvas styling */
@@ -47,17 +50,50 @@
       display: block;
       margin: 0 auto;
     }
+
+    /* Position the Pong images around the canvas */
+    .pong-image {
+      position: absolute;
+      max-width: 320px;  /* Increased size */
+      max-height: 320px; /* Increased size */
+      opacity: 0.8;
+    }
+
+    /* Top left corner image */
+    .top-left {
+      top: 10px;
+      left: 10px;
+    }
+
+    /* Top right corner image */
+    .top-right {
+      top: 10px;
+      right: 10px;
+    }
+
+    /* Bottom left corner image */
+    .bottom-left {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    /* Bottom right corner image */
+    .bottom-right {
+      bottom: 10px;
+      right: 10px;
+    }
   </style>
 </head>
 <body>
-  <h1>Pong Battle</h1>
-  <img src="images/pong1.jpg" alt="Pong Image 1" class="pong-image top-left">
+  <h1>Pong Battles</h1>
+
+  <!-- Add images around the game -->
+  <img src="images/pong1.png" alt="Pong Image 1" class="pong-image top-left">
   <img src="images/pong2.jpg" alt="Pong Image 2" class="pong-image top-right">
   <img src="images/pong3.jpg" alt="Pong Image 3" class="pong-image bottom-left">
-  <img src="images/pong4.jpg" alt="Pong Image 4" class="pong-image bottom-right">
+  <img src="images/pong4.jpeg" alt="Pong Image 4" class="pong-image bottom-right">
 
-  <div class="game-container">
-    <!-- The game canvas will be added here by p5.js -->
-  </div>
+  <!-- The game canvas will be added here by p5.js -->
+  <div class="game-container"></div>
 </body>
 </html>
