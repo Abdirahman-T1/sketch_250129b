@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Game</title>
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="sketch_250129b.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+<style>
+    /* Apply a half-blue and half-red background */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, blue 50%, red 50%);
+      font-family: Arial, sans-serif;
+      flex-direction: column;  /* Stack children (header + game canvas) vertically */
+    }
+
+    /* Header style */
+    h1 {
+      color: white;
+      font-size: 3em;
+      margin: 0;
+      padding-top: 20px; /* Space between the top of the screen and the header */
+    }
+
+    /* Center the game container */
+    .game-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1; /* This ensures the game canvas takes the remaining space */
+      width: 100%;
+      position: relative;
+    }
+
+    /* p5 canvas styling */
+    canvas {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pong Battle</h1>
+  <img src="images/pong1.jpg" alt="Pong Image 1" class="pong-image top-left">
+  <img src="images/pong2.jpg" alt="Pong Image 2" class="pong-image top-right">
+  <img src="images/pong3.jpg" alt="Pong Image 3" class="pong-image bottom-left">
+  <img src="images/pong4.jpg" alt="Pong Image 4" class="pong-image bottom-right">
+
+  <div class="game-container">
+    <!-- The game canvas will be added here by p5.js -->
+  </div>
+</body>
+</html>
